@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import AppBar from "./component/appbar";
+import Posts from "./component/posts/posts.jsx";
+import "./App.css";
+import { Paper } from "@mui/material";
+import About from "./about.js";
+
+
+
+import TabScrollButton from '@mui/material/TabScrollButton';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
+    
+     <Paper>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      <AppBar></AppBar>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <br></br>
+      <div className="posts">
+      <Posts></Posts>
+      </div>
+      <br></br>
+      <TabScrollButton orientation="vertical" direction="left" style={{backgroundColor:'black',color:'white'}}/>
+    
+     
+     
+      <Routes>
+       
+        <Route path="/about" component={About}/>
+        
+      </Routes>
+     
+    
+      </>
     </div>
+    </Paper>
+  
+  
+
+    
   );
 }
 
 export default App;
+
+

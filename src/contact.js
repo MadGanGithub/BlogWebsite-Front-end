@@ -2,8 +2,7 @@ import React from "react";
 import AppBar from "./component/appbar";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import { NavLink } from "react-router-dom";
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { emphasize, styled } from '@mui/material/styles';
 import Chip from '@mui/material/Chip';
 
@@ -35,10 +34,11 @@ const bread_style={
 };
 
 const content_style={
-  marginLeft:20
+  marginLeft:20,
+
 };
 
-const About = () => {
+const Contact = () => {
 return (
   <>
 	<div>
@@ -54,15 +54,15 @@ return (
           label="Home"
           icon={<HomeIcon fontSize="small" />}
         />
-        <StyledBreadcrumb component="a" label="About" icon={<InfoIcon fontSize="small" />}/>
+        <StyledBreadcrumb component="a" label="Contact Us" icon={<ContactMailIcon fontSize="small" />}/>
         
       </Breadcrumbs>
       </div>
       
-      <div className="content" style={content_style}>
-        <h1>About</h1>
+      <div className="content" style={content_style} >
+        <h1>Contact Us</h1>
         <br></br>
-        <p>Mad Stuffs page is the one stop destination for Content writing.</p>
+        <p>Please contact immediately</p>
       </div>
      
 	</div>
@@ -70,4 +70,4 @@ return (
 );
 };
 
-export default About;
+export default Contact;

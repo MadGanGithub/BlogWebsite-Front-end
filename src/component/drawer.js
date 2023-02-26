@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -18,6 +18,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { NavLink } from "react-router-dom";
+import { Box } from '@mui/system';
 
 
 
@@ -54,54 +55,71 @@ export default function SwipeableTemporaryDrawer() {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+      
     >
-      <CardHeader avatar="../assets/avatar.png" style={{backgroundColor:"black"}}/>
+      <Box sx={{height:64}} style={{backgroundColor:"black"}}>
+      <CardHeader />
+      
+      </Box>
+      
       <Divider />
       <List>
         
-          <NavLink to={"/"}><ListItem disablePadding>
+          <NavLink to={"/"} style={{textDecoration:"none"}} ><ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 <HomeIcon style={list_style}/>
               </ListItemIcon>
-              <ListItemText primary='Home'/> 
+              <ListItemText primary='Home' sx={{color:"black"}}/> 
             </ListItemButton>
           </ListItem>
           </NavLink>
 
-          <ListItem disablePadding>
-          <NavLink to={"./"}><ListItemButton>
+          <NavLink to={"/about"} style={{textDecoration:"none"}}><ListItem disablePadding>
+          <ListItemButton>
               <ListItemIcon>
                 <InfoIcon style={list_style}/>
               </ListItemIcon>
-              <ListItemText primary='About' />
+              <ListItemText primary='About' sx={{color:"black"}}/>
             </ListItemButton>
-            </NavLink>
           </ListItem>
+           </NavLink>
           
 
-          <ListItem disablePadding>
-            <ListItemButton>
+          <NavLink to={"/contact"} style={{textDecoration:"none"}}><ListItem disablePadding>
+            <ListItemButton >
               <ListItemIcon>
                 <ContactMailIcon style={list_style}/>
               </ListItemIcon>
-              <ListItemText primary='Contact Us' />
+              <ListItemText primary='Contact Us' sx={{color:"black"}}/>
             </ListItemButton>
           </ListItem>
+          </NavLink>
       </List>
-      <Divider />
+      <Divider/>
       <List>
         
-          <ListItem disablePadding>
+          <NavLink to={"/login"} style={{textDecoration:"none"}} ><ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <LockOpenIcon style={list_style}/>
+                <HomeIcon style={list_style}/>
               </ListItemIcon>
-              
+              <ListItemText primary='LogIn' sx={{color:"black"}}/> 
             </ListItemButton>
           </ListItem>
-      
+          </NavLink>
+
+          <NavLink to={"/signup"} style={{textDecoration:"none"}}><ListItem disablePadding>
+          <ListItemButton>
+              <ListItemIcon>
+                <InfoIcon style={list_style}/>
+              </ListItemIcon>
+              <ListItemText primary='SignUp' sx={{color:"black"}}/>
+            </ListItemButton>
+          </ListItem>
+           </NavLink>
       </List>
+
     </Box>
   );
 
@@ -116,6 +134,7 @@ export default function SwipeableTemporaryDrawer() {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
+           
           >
             {list(anchor)}
           </SwipeableDrawer>

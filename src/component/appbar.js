@@ -7,8 +7,6 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from "../styles/styles.js";
 import titlelogo from "../assets/logo.png";
 import Draww from "./drawer.js";
 
@@ -16,6 +14,7 @@ const style_box={//variable to add styles to the components:inline method
   height:30,
   width: 200,
   paddingLeft: '9%',
+
 };
 
 const Search = styled('div')(({ theme }) => ({
@@ -62,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchAppBar() {
   return (
-    <ThemeProvider theme={theme}>
+    
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ bgcolor: "black" }}>
         <Toolbar sx={{justifyContent:'space-between'}}>
@@ -82,6 +81,6 @@ export default function SearchAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
-    </ThemeProvider>
+    
   );
 }

@@ -1,52 +1,37 @@
 import AppBar from "./component/appbar";
 import Posts from "./component/posts/posts.jsx";
-import "./App.css";
-import { Paper } from "@mui/material";
-import About from "./about.js";
-
-
-
 import TabScrollButton from '@mui/material/TabScrollButton';
+import "./App.css";
+import About from "./about.js";
+import Home from "./home.js";
+import Contact from "./contact.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SinglePost from "./single_post/single_post.js";
+import Login from "./component/login.js";
+import SignUp from "./component/signup.js";
 
 function App() {
   return (
-    
-     <Paper>
-    <div className="App">
     <>
-      <AppBar></AppBar>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
-      <br></br>
-      <div className="posts">
-      <Posts></Posts>
-      </div>
-      <br></br>
-      <TabScrollButton orientation="vertical" direction="left" style={{backgroundColor:'black',color:'white'}}/>
     
-     
-     
       <Routes>
        
-        <Route path="/about" component={About}/>
-        
+       <Route path="/" element={<Home/>}/>
+       <Route path="/about" element={<About/>}/>
+       <Route path="/contact" element={<Contact/>}/>
+       <Route path="/single_post" element={<SinglePost/>}/>
+       <Route path="/login" element={<Login/>}/>
+       <Route path="/signup" element={<SignUp/>}/>
+       
+       
       </Routes>
-     
     
       </>
-    </div>
-    </Paper>
   
   
 
-    
   );
 }
-
 export default App;
 
 

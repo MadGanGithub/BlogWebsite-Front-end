@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Box } from '@mui/system';
-import wall from "../assets/cricket.png";
+import cover from "../assets/cricket.png";
 
 
 export default function ActionAreaCard() {
@@ -18,7 +18,7 @@ export default function ActionAreaCard() {
         <CardMedia
           component="img"
           height="150"
-          image={wall}
+          image={cover}
           
         />
         <CardContent>
